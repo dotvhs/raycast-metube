@@ -6,11 +6,6 @@ interface AddToQueueResponse {
   msg?: string;
 }
 
-interface Preferences {
-  metubeUrl: string;
-  quality: string;
-  format: string;
-}
 
 export async function addToQueue(
   url: string,

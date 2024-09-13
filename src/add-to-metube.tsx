@@ -8,11 +8,6 @@ type Values = {
   format: string;
 };
 
-interface Preferences {
-  metubeUrl: string;
-  quality: string;
-  format: string;
-}
 
 export default function Command() {
   const preferences = getPreferenceValues<Preferences>();
