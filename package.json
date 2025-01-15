@@ -19,6 +19,22 @@
       "required": true
     },
     {
+      "name": "cf-access-client-id",
+      "title": "Cloudflare - CF-Access-Client-Id Header (optional)",
+      "description": "Service Auth Client ID",
+      "type": "textfield",
+      "default": "",
+      "required": false
+    },
+    {
+      "name": "cf-access-client-secret",
+      "title": "Cloudflare - CF-Access-Client-Secret Header (optional)",
+      "description": "Service Auth Client Secret",
+      "type": "textfield",
+      "default": "",
+      "required": false
+    },
+    {
       "name": "quality",
       "title": "Quality",
       "description": "Preferred quality to download",
