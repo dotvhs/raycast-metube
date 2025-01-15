@@ -17,14 +17,24 @@ export async function addToQueue(
 
   const metubeUrl = `${preferences.metubeUrl}/add`;
 
+  // Initialize headers
+  const headers: Record<string, string> = {
+    "Content-Type": "application/json",
+  };
+
+  // Conditionally add headers if preferences are specified
+  if (preferences["cf-access-client-id"] && preferences["cf-access-client-secret"]) {
+    headers["cf-access-client-id"] = preferences["cf-access-client-id"];
+    headers["cf-access-client-secret"] = preferences["cf-access-client-secret"];
+  }
+
   const body = JSON.stringify({ url, quality, format });
   const response = await fetch(metubeUrl, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
+    headers,
     body,
   });
+
   return response.json() as Promise<AddToQueueResponse>;
 }
 
